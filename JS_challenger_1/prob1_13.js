@@ -179,5 +179,4 @@ function basicOperation(operation, number1, number2) {
     }
 }
 console.log(basicOperation("*", 9, 6));
-console.log(basicOperation("-", 9, 6));
 console.log(basicOperation("%", 9, 6));
