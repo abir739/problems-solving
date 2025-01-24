@@ -62,3 +62,29 @@ function numberToString(number) {
     return `${number}`;
 }
 console.log(typeof numberToString(20987) + numberToString(20987));
+
+// Prob 22:  Calculate average
+
+function average(array) {
+    return array === null?  0 : array.reduce((acc, curr) => acc+curr,0) / array.length ;
+}
+console.log(average([1,2,3, 4, 10]));
+console.log(average([]));
+console.log(average([1,2,3]));
+
+// Prob 23- Convert a String to a Number
+function stringToNumber(str) {
+    return Number(str);
+    // return +str;
+}
+console.log(typeof stringToNumber("12345") + stringToNumber("12345"));
+
+// Prob 24- Count The Monkeys
+function monkeyCount(n) {
+    let array = [];
+    for (let i=1; i<=n; i++){ array.push(i);}
+    return array;
+}
+console.log(monkeyCount(10));
+
+// Prob 25- Welcome
