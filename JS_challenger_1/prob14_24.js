@@ -176,4 +176,14 @@ return (/^r/i).test(name)  ? `${name} plays Banjo`: `${name} does not play banjo
 }
 console.log(playBanjo("Rami"));
 
-// Prob 31: Removing Elements
+// Prob 31: Removing Elements: always keep the first elmt and remove the second elmt
+function removeSecond(array) {
+//     let newArray = [];
+//     for(let i= 0; i<array.length; i++){
+
+// if(i%2 === 0) {newArray.push(array[i]); }
+// }
+// return newArray;
+return array.filter(m => array.indexOf(m)%2===0);
+}
+console.log(removeSecond(["keep","remove","keep","remove","keep","remove",]))
