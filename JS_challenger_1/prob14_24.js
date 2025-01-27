@@ -87,4 +87,93 @@ function monkeyCount(n) {
 }
 console.log(monkeyCount(10));
 
-// Prob 25- Welcome
+// Prob 25- Welcome: Write a 'welcome' function that takes a parameter 'language',
+// with a type String, and returns a greeting - if you have it in your database.
+// It should default to English if the language is not in the database, or in the event of an invalid input.
+
+// hasOwnProperty() checks if an object has a specific property directly on itself, not inherited from prototype chain
+
+function welcome(language) {
+    let obj = {
+        english: "Welcome",
+        czech: "Vitejte",
+        danish: "Velkomst",
+        dutch: "Welkom",
+        estonian: "Tere tulemast",
+        finnish: "Tervetuloa",
+        flemish: "Welgekomen",
+        french: "Bienvenue",
+        german: "Willkommen",
+        irish: "Failte",
+        italian: "Benvenuto",
+        latvian: "Gaidits",
+        lithuanian: "Laukiamas",
+        polish: "Witamy",
+        spanish: "Bienvenido",
+        swedish: "Valkommen",
+        welsh: "Croeso",        
+    };
+if(obj.hasOwnProperty(language)) {
+    return obj[language];
+} else {
+    return obj["english"];
+}
+}
+console.log(welcome("dutch"));
+console.log(welcome("arabic"))
+
+// Prob 26: Sentence Smash
+function smash(words) {
+    return words.join(" ");
+}
+console.log(smash(['Bonjour', 'Abir', 'CV', 'tout', 'bien', '?']));
+
+// Prob 27: Switch It Up: return the numbers in words
+function switchItUp(number) {
+    let numbers = {
+        0:"Zero",
+        1:"One",
+        2:"Two",
+        3:"Three",
+        4:"Four",
+        5:"Five",
+        6:"Six",
+        7:"Seven",
+        8:"Eight",
+        9:"Nine"
+    };
+return numbers[number]  ;
+
+// switch (number) {
+//     case 0: return "Zero"; break;
+//     case 1: return "One"; break;
+//     case 2: return "Two"; break;
+//     case 3: return "Three"; break;
+//     default: return "Wrong Nummber";
+
+// }
+
+}
+console.log(switchItUp(6));
+
+// Prob 28: Do I Get A Bonus
+function bonusTime(salary, bonus){
+    return bonus? "\u00A2"+salary*10 : "\u00A2"+salary;
+}
+console.log(bonusTime(1500, true));
+console.log(bonusTime(500, false));
+
+// Prob 29: Exclamation marks
+function remove(str) {
+    return str.replace(/!$/, "");
+}
+console.log(remove("!Hi, Abir!!"));
+
+// Prob 30: play banjo?
+function playBanjo(name) {
+    // return (name[0] === "r" || name[0] === "R") ? `${name} plays Banjo`: `${name} does not play banjo`;
+return (/^r/i).test(name)  ? `${name} plays Banjo`: `${name} does not play banjo`;
+}
+console.log(playBanjo("Rami"));
+
+// Prob 31: Removing Elements
