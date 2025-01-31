@@ -186,4 +186,24 @@ function removeSecond(array) {
 // return newArray;
 return array.filter(m => array.indexOf(m)%2===0);
 }
-console.log(removeSecond(["keep","remove","keep","remove","keep","remove",]))
+console.log(removeSecond(["keep","remove","keep","remove","keep","remove",]));
+
+// Prob 32: Unfinished Loop
+function createArray(nb) {
+    var array = [];
+    for( var i= 0; i< nb; i++) {
+        array.push(i);
+    }
+    return array;
+}
+console.log(createArray(5));
+
+// Prob 33: Transportation On Vacation
+function rentalCarCost(d) {
+let cost = 40 * d;
+if(d < 3) return cost;
+return (d >= 7) ? cost - 50 : cost -20;
+}
+console.log(rentalCarCost(8));
+
+// Prob 34: Exclusive Xor Operator
