@@ -207,3 +207,61 @@ return (d >= 7) ? cost - 50 : cost -20;
 console.log(rentalCarCost(8));
 
 // Prob 34: Exclusive Xor Operator
+function xor(a, b) {
+    // return (a === true && b === false) || (b === true && a === false) ? true : false;
+    return a === b ? false : true;
+}
+console.log(xor(false, false));
+console.log(xor(false, true));
+console.log(xor(true, true));
+
+// Prob 35: Find the first non consecutive number
+
+function firstNonConsecutive (arr) {
+    for (let i = 1; i < arr.length; i++) {
+      if (arr[i] - 1 !== arr[i - 1]) return arr[i];
+    }
+    return null;
+  }
+console.log(firstNonConsecutive([1, 2, 3, 4, 6, 7, 8]));
+
+// Prob 36- Volume Of a Cubiod
+function volumeOfCuboid(length, width, height) {
+    return length * width * height;
+}
+console.log(volumeOfCuboid(3, 4, 5));
+
+// Prob 37- Formatting To Decimal Places
+function twoDecimalPlaces(n) {
+    // return Number(n).toFixed(2);
+    return Math.round(n*100)/100
+
+}
+console.log(twoDecimalPlaces(12.2356));
+
+// Prob 38- Dollar And Cents
+function formatMoney(amount){
+    return `$${Number(amount).toFixed(2)}`;
+}
+console.log(formatMoney(39.99));
+
+// Prob 39- Find The Position
+function getposition(lettrte) {
+    // const position = lettrte.charCodeAt(0) - 96;
+ 
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    const position = alphabet.indexOf(lettrte) + 1;
+    return `Position of alphabet: ${position}`;
+}
+console.log(getposition('c'));
+
+// Prob 40: Opposites attract
+function lovefunc(flower1, flower2) {
+
+    return flower1 % 2 !== flower2 % 2  ? true : false;
+}
+
+console.log(lovefunc(1,4));
+console.log(lovefunc(2,2));
+
+// Prob 41: No Zeros For Heros
