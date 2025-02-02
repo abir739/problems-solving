@@ -265,3 +265,20 @@ console.log(lovefunc(1,4));
 console.log(lovefunc(2,2));
 
 // Prob 41: No Zeros For Heros
+// 1- Used 0+ to match one or more zeros at the end
+// 2- Wrapped with Number() to convert back to number
+function noBoringZeros(n) {
+//   return Number(n.toString().replace(/0+$/,""));
+
+if (n === 0) return 0;
+while (n % 10 === 0 && n !== 0) {
+    n = n / 10;    
+}
+return n;
+// let str = n.toString();
+// while(str.endsWith("0"))  {
+//     str = str.slice(0, -1);
+// }
+// return Number(str);
+  }
+console.log(noBoringZeros(203000)+ typeof(noBoringZeros(20300)));
