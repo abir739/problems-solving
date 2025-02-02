@@ -282,3 +282,9 @@ return n;
 // return Number(str);
   }
 console.log(noBoringZeros(203000)+ typeof(noBoringZeros(20300)));
+
+// Prob 42: Get The Mean Of An Array
+function getAverage(marks){
+    //TODO : calculate the downward rounded average of the marks array
+     
+  }
