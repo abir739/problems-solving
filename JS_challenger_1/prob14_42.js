@@ -286,5 +286,8 @@ console.log(noBoringZeros(203000)+ typeof(noBoringZeros(20300)));
 // Prob 42: Get The Mean Of An Array
 function getAverage(marks){
     //TODO : calculate the downward rounded average of the marks array
-     
+    const l = marks.length;
+    return Math.floor(marks.reduce((acc, curr) => acc + curr, 0)/l)    
   }
+
+console.log(getAverage([1,1,1,1,1,1,1,2]));
