@@ -111,3 +111,16 @@ return str.slice(1, -1);
 
  };
  console.log(removeChar("chai"));
+
+ // 52- Square(n) Sum 
+ function squareSum(numbers){
+ return numbers.map(x => x*x).reduce((acc, curr) => acc + curr, 0);
+ }
+ console.log(squareSum([1,2,2]));
+
+ // 53- Find the smallest integer in the array
+ function findSmallestInt(arr) {
+// return arr.sort((a,b) => a-b).shift();
+return Math.min(...arr);
+}
+console.log(findSmallestInt([78,56,232,12,8]));
