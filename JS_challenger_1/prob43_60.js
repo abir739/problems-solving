@@ -124,3 +124,54 @@ return str.slice(1, -1);
 return Math.min(...arr);
 }
 console.log(findSmallestInt([78,56,232,12,8]));
+
+// 54- Is n divisible by x and y : n =   3, x = 1, y = 3 =>  true  ,  n = 100, x = 5, y = 3 => false
+function isDivisible(n, x, y) {
+  return n % x == 0 && n % y == 0 ? true : false;
+}
+console.log(isDivisible(3,1,3));
+console.log(isDivisible(100,5,3));
+
+// 55- Beginner Lost Without a Map
+function maps(x){
+return x.map(m => m*2);
+}
+console.log(maps([1, 2, 3]));
+
+// 56- Fake Binary : ('45385593107843568') => '01011110001100111')
+function fakeBin(x){
+ return x.split('').map(m => m < 5 ? 0 : 1).join('');
+// return x.replace(/[1-4]/g, '0').replace(/[5-9]/g, '1');
+}
+console.log(fakeBin('45385593107843568'));
+
+// Prob : 57- Sum Arrays
+// Write a function that takes an array of numbers and returns the sum of the numbers. The numbers can be negative or non-integer.
+//  If the array does not contain any numbers then you should return 0.
+
+function sumArray(numbers) {
+if(numbers.length <= 0) {return 0;}
+return numbers.reduce((acc, curr) => acc + curr, 0);
+}
+console.log(sumArray([]));
+console.log(sumArray([2,3,5,-1]));
+
+// Prob 58- Simple multiplication
+function simpleMultiplication(number) {
+return number % 2 == 0 ? number * 8 : number * 9;
+}
+console.log(simpleMultiplication(2));
+console.log(simpleMultiplication(1));
+
+// Prob 59- MakeUpperCase
+function makeUpperCase(str) {
+  return str.toUpperCase();
+}
+console.log(makeUpperCase("hello"));
+
+// Prob 60- Array plus array
+function arrayPlusArray(arr1, arr2) {
+  return [...arr1 , ...arr2].reduce((acc, curr) => acc + curr, 0);
+  // return arr1.concat(arr2).reduce((acc, curr) => acc + curr, 0);
+}
+console.log(arrayPlusArray([1, 2, 3], [4, 5, 6]));
