@@ -175,3 +175,47 @@ function arrayPlusArray(arr1, arr2) {
   // return arr1.concat(arr2).reduce((acc, curr) => acc + curr, 0);
 }
 console.log(arrayPlusArray([1, 2, 3], [4, 5, 6]));
+
+// Prob 61- Sum Mixed Array
+function sumMix(x){
+  // return x.map(m => Number(m)).reduce((acc, curr) => acc + curr, 0);
+return x.reduce((acc, curr) => Number(acc) + Number(curr), 0);
+}
+console.log(sumMix(['5', '0', 9, 3, 2, 1, '9', 6, 7]));
+
+// Prob 62- The Feast of Many Beasts : he dish must start and end with the same letters as the animal's name
+function feast(beast, dish) {
+// let arr1 = beast.split("");
+// let arr2 = dish.split("");
+// return arr1[0][0] == arr2[0][0] && arr1[arr1.length-1][arr1[arr1.length-1].length-1] == arr2[arr2.length-1][arr2[arr2.length-1].length-1];
+
+return beast[0] === dish[0] && beast[beast.length - 1] === dish[dish.length - 1];
+// let letters1 = beast[0] + beast[beast.length - 1];
+// let letters2 = dish[0] + dish[dish.length - 1];
+// return letters1 === letters2;
+  }
+console.log(feast("great blue heron", "garlic naan"));
+console.log(feast("chickadee", "chocolate cake"));
+console.log(feast("brown bear", "bear claw"));
+
+// Prob 63- Thinkful Logic Drills Traffic light
+function updateLight(current) {
+switch(current) {
+  case "green" : return " yellow";
+  case "yellow": return "red";
+  case "red": return "green";
+  default: return "invalid color";
+}
+}
+console.log(updateLight("green"));
+
+ // Prob 64- L1 Set Alarm
+ function setAlarm(employed, vacation) {
+  return employed === true && employed !== vacation;
+ }
+ console.log(setAlarm(true, true));
+ console.log(setAlarm(false, true));
+ console.log(setAlarm(false, false));
+ console.log(setAlarm(true, false));
+
+
