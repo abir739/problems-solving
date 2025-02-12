@@ -212,10 +212,76 @@ console.log(updateLight("green"));
  // Prob 64- L1 Set Alarm
  function setAlarm(employed, vacation) {
   return employed === true && employed !== vacation;
+  // return employed && !vacation;
  }
  console.log(setAlarm(true, true));
  console.log(setAlarm(false, true));
  console.log(setAlarm(false, false));
  console.log(setAlarm(true, false));
 
+ // Prob 65- Quarter of the year
+ const quarterOf = (month) => {
+  // return month < 4 ? 1 : month < 7 ? 2 : month < 10 ? 3 : 4;
+  return Math.ceil(month / 3);
+// switch(month) {
+//   case 1:
+//   case 2:
+//   case 3: 
+//   return 1;
+//   case 4:
+//   case 5:
+//   case 6: 
+//     return 2;
+//   case 7:
+//   case 8:
+//   case 9: 
+//     return 3;
+//   case 10:
+//   case 11:
+//   case 12: 
+//     return 4;
+// }
+  
+}
+console.log(quarterOf(3));
+console.log(quarterOf(8));
+console.log(quarterOf(11));
 
+// Prob 66- AddLength , exemple: "apple ban" --> ["apple 5", "ban 3"] "you will win" -->["you 3", "will 4", "win 3"]
+function addLength(str) {
+  return str.split(" ").map(x => x +" " + x.length);
+  }
+console.log(addLength("apple ban"));
+
+// Prob 67 -How many lightsabers do you own
+function howManyLightsabersDoYouOwn(name) {
+  return /Zach/.test(name) ? 18 : 0;
+}
+console.log(howManyLightsabersDoYouOwn());
+console.log(howManyLightsabersDoYouOwn("Adam"));
+console.log(howManyLightsabersDoYouOwn("Zach"));
+
+// Prob 68- Twice as old
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+  // return Math.abs(sonYearsOld * 2 - dadYearsOld);
+ return sonYearsOld * 2 < dadYearsOld ? dadYearsOld - sonYearsOld * 2 : sonYearsOld * 2 > dadYearsOld ? sonYearsOld * 2 - dadYearsOld : 0 ;
+}
+
+// Prob 69- Keep up the hoop
+function hoopCount (n) {
+  return n < 10 ?  "Keep at it until you get it" :  "Great, now move on to tricks";
+}
+
+// Prob 70- Character Recognition
+function correct(string)
+{
+  const chars = {
+    '0' : 'O',
+    '1' : 'I',
+    '5' : 'S'
+  }
+  return string.replace(/[501]/g, x => chars[x]);
+	// return string.replace(/5/g, "S").replace(/0/g, "O").replace(/1/g, "I");
+}
+console.log(correct("L0ND0N"));
+console.log(correct("51NGAP0RE"));
