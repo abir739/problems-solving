@@ -34,3 +34,49 @@ arr.push(Math.pow(2, i));
 return arr;
   }
 console.log(powersOfTwo(4));
+
+// Prob : 76- Sum The Strings : "34", "5" --> "39"
+function sumStr(a,b) {
+  return (Number(a) + Number(b)).toString();
+}
+console.log(sumStr("4","5") + typeof(sumStr("4","5")));
+
+// Prob: 77- Sort and Star
+function twoSort(s) {
+return s.sort()[0].split('').join('***');
+}
+console.log(twoSort(["bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "perhaps"]));
+
+// Prob: 78- Expressions Matter
+function expressionMatter(a, b, c) {
+    let eq1 =  a + b + c;
+    let eq2 = a * b * c;
+    let eq3 = a * ( b + c );
+    let eq4 = c * ( a + b);
+    return Math.max(eq1, eq2, eq3, eq4);
+  }
+
+// Prob 79- Is it even
+function testEven(n) {
+    return n % 2 === 0;
+ }
+
+// Prob: 80- Filter out the geese
+function gooseFilter (birds) {
+var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+return birds.filter(x => ! geese.includes(x));
+
+  };
+console.log(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]));
+
+// Prob : 81- What is between a=1, b = 4 => [1,2,3,4]
+function between(a,b) {
+    let arr = [];
+    for(let i = a; i<= b; i++) {
+        arr.push(i);
+    }
+    return arr;
+}
+console.log(between(1, 4));
+
+// Prob 82- Grasshopper Debug sayHello
