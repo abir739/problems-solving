@@ -80,3 +80,45 @@ function between(a,b) {
 console.log(between(1, 4));
 
 // Prob 82- Grasshopper Debug sayHello
+function sayHello(name) {
+  return 'Hello,' + name;
+}
+
+// Prob: 84- N th Power
+function index(array, n) {
+  return array.length - 1 < n ? -1 : Math.pow(array[n], n);
+}
+
+console.log(index([1,2,100], 2));
+
+// Prob : 86 - Stringy Strings
+function stringy(size) {
+  let arr = [];
+  for(let i = 1; i<= size; i ++) {
+    i % 2 != 0 ? arr.push(1) : arr.push(0);
+  }
+  return arr.toString().split(',').join('');
+}
+
+console.log(stringy(3));
+
+// Prob : 87- Find Multiples of a Number : 
+// For example, if the parameters passed are (2, 6), the function should return [2, 4, 6] as 2, 4, and 6 are the multiples of 2 up to 6.
+
+function findMultiples(integer, limit) {
+ let arr = [];
+ for (let i = integer; i<= limit; i++) {
+  i % integer == 0 ? arr.push(i) : null;
+ }
+ return arr;
+}
+console.log(findMultiples(2,6));
+
+// Prob: 88- Remove duplicates from list
+// [1, 2, 1, 1, 3, 2] -> [1, 2, 3]
+
+function distinct(a) {
+  return a.filter((value, ind) => a.indexOf(value) === ind);
+}
+
+console.log(distinct([1, 1, 2, 1, 1, 1, 3, 2]));
