@@ -118,7 +118,8 @@ console.log(findMultiples(2,6));
 // [1, 2, 1, 1, 3, 2] -> [1, 2, 3]
 
 function distinct(a) {
-  return a.filter((value, ind) => a.indexOf(value) === ind);
+  // return a.filter((value, ind) => a.indexOf(value) === ind);
+  return [...new Set(a)];
 }
 
 console.log(distinct([1, 1, 2, 1, 1, 1, 3, 2]));
