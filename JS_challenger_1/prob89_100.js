@@ -23,3 +23,16 @@ function sayHello( name, city, state ) {
   return "Hello, " + name.join(' ').concat('!') + " Welcome to " + city.concat(', ') + state.concat('!');
 }
 console.log(sayHello(['John', 'Smith'], 'Phoenix', 'Arizona'));
+
+// 92- Remove First and Last Character Part Two "1,2,3,4,5"  =>  "2 3 4"
+function array(string) {
+  let arr = [];
+  let str = string.split(',');
+  if(str.length <= 2) {return null} else
+  for(let i = 1; i<str.length-1; i++){
+     arr.push(str[i]);
+  }
+  
+  return arr.join(' ');
+  }
+console.log(array('A1,B2,C3'));
