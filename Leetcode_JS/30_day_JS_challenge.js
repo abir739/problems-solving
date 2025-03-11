@@ -126,3 +126,27 @@ var map = function(arr, fn) {
 
 
 // Prob 5: Filter Elements from Array (Transforms) - Leetcode 2634
+var filter = function(arr, fn) {
+    let newArr = [];
+    for(const i in arr) {
+        if(fn(arr[i], Number(i))) {
+          newArr.push(arr[i]);
+        }
+    }
+    return newArr;
+};
+
+// Prob 5: Array Reduce Transformation (Transforms) - Leetcode 2626
+// result is achieved through the following 
+// operations: val = fn(init, nums[0]), val = fn(val, nums[1]), val = fn(val, nums[2]), ... until every element in the array has been processed. The ultimate value of val is then returned.
+
+// If the length of the array is 0, the function should return init.
+var reduce = function(nums, fn, init) {
+    let val = init;
+    for(const n of nums){
+        val = fn(val, n);
+    }
+return val;
+
+// return nums.reduce(fn, init);
+};
