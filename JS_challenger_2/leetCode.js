@@ -143,10 +143,40 @@ var filter = function(arr, fn) {
 // If the length of the array is 0, the function should return init.
 var reduce = function(nums, fn, init) {
     let val = init;
-    for(const n of nums){
-        val = fn(val, n);
-    }
+
+    nums.forEach((e) => {
+        val = fn(val, n)
+    });
+
+    // for(const n of nums){
+    //     val = fn(val, n);
+    // }
 return val;
 
 // return nums.reduce(fn, init);
 };
+
+// Prob 7: Function Composition - Leetcode 2629
+// The function composition of [f(x), g(x), h(x)] is fn(x) = f(g(h(x))).
+
+// The function composition of an empty list of functions is the identity function f(x) = x.
+
+// Input: functions = [x => x + 1, x => x * x, x => 2 * x], x = 4
+// Output: 65
+// Explanation:
+// Evaluating from right to left ...
+// Starting with x = 4.
+// 2 * (4) = 8
+// (8) * (8) = 64
+// (64) + 1 = 65
+var compose = function(functions) {
+    
+    return function(x) {
+        for(const f of functions.reverse()) {
+            functions == null ? x : x = f(x);
+        }
+      return x
+    }
+};
+
+// prob 8: Curry - Leetcode 2632 - JavaScript 30-Day Challenge
