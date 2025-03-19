@@ -126,3 +126,72 @@ console.log(contains2To4('ooh!', 'o'));
 console.log(contains2To4('ooooh!', 'o'));
 console.log(contains2To4('oooooh!', 'o'));
 console.log(contains2To4('oh!', 'o'));
+
+// Exercice 11: 
+/* write a JS program to find the number of even digits in a an array of integers */
+
+const evenDigits = (array) => array.filter((x) => x % 2 == 0).length;
+// const evenDigits = (array) => {
+//     const newArray = [];
+//     for (let x of array) {
+//         if (x % 2 == 0) {
+//             newArray.push(x);
+//         }
+//     }
+//     return newArray.length;
+// }
+console.log(evenDigits([1,2,3,4,5,6]));
+
+// Exercice 12: 
+/* write a JS program to find the number of even values up to a given number.*/
+
+const numberOfEvenValues = (num) => {
+let count = 0;
+for(let n = 1; n<=num; n++) {
+    if (n % 2 == 0) { count++;}
+}
+return count;
+}
+
+console.log(numberOfEvenValues(5));
+
+
+// Exercice 13: 
+/* write a JS program to check wheather a given array of integers 
+   is scored in ascending order.*/
+
+   const ascendingArray = (arr) => {
+   const  newArray = [...arr].sort((a,b) => a-b); //create a sorted copy
+    return JSON.stringify(arr) === JSON.stringify(newArray);  // Compare stringified versions
+    /*comparing arrays with === does not work 
+    as expected because arrays are reference types. */
+}
+
+   console.log(ascendingArray([1,2,3,4,5]));
+   console.log(ascendingArray([1,2,0,6,5]));
+
+// Solution 2:
+const isAscending = (arr) => {
+    for(let i = 0; i< arr.length; i++) {
+        if(arr[i+1] < arr[i]) return false;
+    }
+    return true;
+}
+
+console.log(isAscending([1,2,3,4,5]));
+console.log(isAscending([1,2,0,6,5]));
+
+// Exercice 14: 
+/* write a JS program to get the largest even number 
+   from an array pf integer.*/
+
+const LargestEven = (arr) => {
+   const  evenNumbers = arr.filter(x => x % 2 == 0).sort((a,b) => a-b);
+   return evenNumbers[evenNumbers.length-1];
+
+//    const  evenNumbers = arr.filter(x => x % 2 == 0);
+//    return evenNumbers.length > 0 ? Math.max(...evenNumbers) : null;
+}
+
+console.log(LargestEven([10,2,30,14,5]));
+
